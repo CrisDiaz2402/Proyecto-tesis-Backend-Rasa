@@ -3,27 +3,79 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - preguntar_carrera
-  - preguntar_materia
-  - fuera_de_ambito
+  - nlu_fallback  # Intención interna para cuando no entiende
+  # --- INTENCIONES DEL GRAFO ---
+  - preguntar_enfoque
+  - preguntar_campo_laboral
+  - preguntar_objetivos
+  - preguntar_duracion
+  - preguntar_primeros_semestres
+  - preguntar_materias_especialidad
+  - preguntar_software_ia
+  - preguntar_requisitos_ingreso
+  - preguntar_requisitos_graduacion
+  - preguntar_horas_practicas
+  - preguntar_documentos_grado
+  - preguntar_formularios_especificos
+  - preguntar_ubicacion
+  - preguntar_contacto
 
 responses:
   utter_greet:
-  - text: "¡Hola! Soy tu asistente de la carrera. ¿En qué puedo ayudarte hoy?"
-
-  utter_info_carrera:
-  - text: "La carrera de Ingeniería de ciencias de la computacion en la EPN busca formar profesionales capaces de diseñar e implementar soluciones tecnológicas robustas."
-
-  utter_info_materia:
-  - text: "Ingeniería de ciencias de la computacion I (ICCD512) es una materia donde aprenderás el ciclo de vida del desarrollo y metodologías ágiles."
+    - text: "¡Hola! Soy el Asistente de Ciencias de la Computación de la EPN. Mi información está limitada a temas oficiales de la carrera. ¿Qué deseas saber?"
 
   utter_goodbye:
-  - text: "Fue un gusto ayudarte. ¡Éxito en tus estudios!"
+    - text: "¡Hasta luego! Éxito en tus estudios en la Poli."
 
-  utter_fuera_de_ambito:
-  - text: "Lo siento, solo tengo información sobre la carrera de Ingeniería de ciencias de la computacion en la EPN. ¿Deseas saber algo sobre nuestro plan de estudios?"
+  # --- RESPUESTA POR DEFECTO (FUERA DEL GRAFO) ---
+  utter_default:
+    - text: "Lo siento, mi base de conocimientos actual no tiene información sobre ese tema. Por favor, pregúntame sobre la malla, requisitos de graduación, prácticas o perfil de la carrera."
+
+  # --- RESPUESTAS RAMA 1: PERFIL ---
+  utter_enfoque:
+    - text: "El enfoque es el estudio de fundamentos teóricos y técnicos para desarrollar sistemas computacionales eficientes y sustentables."
+  
+  utter_campo_laboral:
+    - text: "Podrás trabajar en Desarrollo de Software e IA, Auditoría de Sistemas, Investigación, Seguridad Informática y Emprendimiento Tecnológico."
+
+  utter_objetivos:
+    - text: "El objetivo es generar soluciones computacionales que apoyen la transformación productiva y tecnológica del Ecuador con rigor ético."
+
+  # --- RESPUESTAS RAMA 2: MALLA ---
+  utter_duracion:
+    - text: "La carrera dura 9 niveles (semestres) en modalidad presencial."
+
+  utter_primeros_semestres:
+    - text: "En el Nivel 1 verás: Programación de Fundamentos (ICCD123), Análisis Matemático (MATH133), Álgebra Lineal (MATH143), Química y Comunicación."
+
+  utter_materias_especialidad:
+    - text: "Las materias clave son Estructuras de Datos, Redes de Computadores, Sistemas Operativos y Computación Gráfica."
+
+  utter_software_ia:
+    - text: "Ingeniería de Software I se dicta en el 5to nivel. Inteligencia Artificial se dicta en el 7mo nivel."
+
+  # --- RESPUESTAS RAMA 3: PROCESOS (DETALLADAS) ---
+  utter_requisitos_ingreso:
+    - text: "Necesitas el título de bachiller y haber obtenido el puntaje mínimo definido por el SNNA para la carrera."
+
+  utter_requisitos_graduacion:
+    - text: "Para graduarte necesitas aprobar 225 créditos totales. Esto incluye: las 57 materias de la malla (incluyendo 3 optativas), suficiencia de inglés (B1), las 240 horas de prácticas y la unidad de integración curricular."
+
+  utter_horas_practicas:
+    - text: "Son 240 horas en total, divididas obligatoriamente así: 144 horas de Prácticas Laborales y 96 horas de Servicio Comunitario."
+
+  utter_documentos_grado:
+    - text: "Al final debes entregar: Expediente de grado, currículo académico certificado, certificado de créditos por categorías y certificado de no adeudar."
+
+  utter_formularios_especificos:
+    - text: "Se requieren específicamente los formularios F_AA_211 (Certificado de no adeudar) y el BRB_TIC_1 (Registro bibliográfico)."
+
+  # --- RESPUESTAS RAMA 4: CONTACTO ---
+  utter_ubicacion:
+    - text: "Estamos en la Facultad de Ingeniería de Sistemas, Edificio 20, Piso 2, Oficina 201."
+
+  utter_contacto:
+    - text: "El horario es de 08:00 a 17:00 (receso 13:00-14:00). Correo: subdecano.sistemas@epn.ec"
 
 session_config:
   session_expiration_time: 60

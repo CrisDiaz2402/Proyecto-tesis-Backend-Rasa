@@ -1,22 +1,89 @@
 version: "3.1"
 
 rules:
-- rule: Saludar siempre
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - rule: Saludar
+    steps:
+      - intent: greet
+      - action: utter_greet
 
-- rule: Despedirse siempre
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - rule: Despedirse
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
 
-- rule: Responder info de carrera
-  steps:
-  - intent: preguntar_carrera
-  - action: utter_info_carrera
+  # --- REGLA DE FALLBACK (LO QUE NO ESTÁ EN EL GRAFO) ---
+  - rule: Responder Default cuando no entiende (Fuera de grafo)
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default
 
-- rule: Responder siempre fuera de ambito
-  steps:
-  - intent: fuera_de_ambito
-  - action: utter_fuera_de_ambito
+  # --- REGLAS DEL GRAFO ---
+  - rule: Resp Enfoque
+    steps:
+      - intent: preguntar_enfoque
+      - action: utter_enfoque
+
+  - rule: Resp Campo Laboral
+    steps:
+      - intent: preguntar_campo_laboral
+      - action: utter_campo_laboral
+
+  - rule: Resp Objetivos
+    steps:
+      - intent: preguntar_objetivos
+      - action: utter_objetivos
+
+  - rule: Resp Duracion
+    steps:
+      - intent: preguntar_duracion
+      - action: utter_duracion
+
+  - rule: Resp Primeros Semestres
+    steps:
+      - intent: preguntar_primeros_semestres
+      - action: utter_primeros_semestres
+
+  - rule: Resp Materias Especialidad
+    steps:
+      - intent: preguntar_materias_especialidad
+      - action: utter_materias_especialidad
+
+  - rule: Resp Software IA
+    steps:
+      - intent: preguntar_software_ia
+      - action: utter_software_ia
+
+  - rule: Resp Requisitos Ingreso
+    steps:
+      - intent: preguntar_requisitos_ingreso
+      - action: utter_requisitos_ingreso
+
+  - rule: Resp Requisitos Graduacion
+    steps:
+      - intent: preguntar_requisitos_graduacion
+      - action: utter_requisitos_graduacion
+
+  - rule: Resp Horas Practicas
+    steps:
+      - intent: preguntar_horas_practicas
+      - action: utter_horas_practicas
+
+  - rule: Resp Documentos Grado
+    steps:
+      - intent: preguntar_documentos_grado
+      - action: utter_documentos_grado
+
+  - rule: Resp Formularios
+    steps:
+      - intent: preguntar_formularios_especificos
+      - action: utter_formularios_especificos
+
+  - rule: Resp Ubicacion
+    steps:
+      - intent: preguntar_ubicacion
+      - action: utter_ubicacion
+
+  - rule: Resp Contacto
+    steps:
+      - intent: preguntar_contacto
+      - action: utter_contacto

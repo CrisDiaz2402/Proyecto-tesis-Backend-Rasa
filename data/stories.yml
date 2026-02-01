@@ -1,20 +1,29 @@
 version: "3.1"
 
 stories:
-- story: consulta de carrera feliz
+- story: recorrido simple duracion
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: preguntar_carrera
-  - action: utter_info_carrera
-  - intent: preguntar_materia
-  - action: utter_info_materia
+  - intent: preguntar_duracion
+  - action: utter_duracion
   - intent: goodbye
   - action: utter_goodbye
 
-- story: consulta directa de materia
+- story: recorrido requisitos
   steps:
-  - intent: preguntar_materia
-  - action: utter_info_materia
-  - intent: affirm
+  - intent: greet
+  - action: utter_greet
+  - intent: preguntar_requisitos_graduacion
+  - action: utter_requisitos_graduacion
+  - intent: goodbye
   - action: utter_goodbye
+
+- story: recorrido materias y contacto
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: preguntar_primeros_semestres
+  - action: utter_primeros_semestres
+  - intent: preguntar_contacto
+  - action: utter_contacto

@@ -1,0 +1,52 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - buenos días
+    - buenas tardes
+    - hey
+    - saludos
+
+- intent: preguntar_carrera
+  examples: |
+    - ¿Qué es ciencias de la computacion en la poli?
+    - Háblame de la carrera en la facultad
+    - ¿Qué tal es la carrera de ingeniería de ciencias de la computacion?
+    - Quiero estudiar ciencias de la computacion en la EPN
+
+- intent: preguntar_materia
+  examples: |
+    - ¿Qué contenido tiene la materia ICCD512?
+    - ¿Es difícil ciencias de la computacion 1?
+    - Dame el sílabo de la asignatura de ciencias de la computacion
+
+- intent: goodbye
+  examples: |
+    - adiós
+    - hasta luego
+    - chao
+    - nos vemos
+    - gracias por la info
+
+- intent: affirm
+  examples: |
+    - sí
+    - claro
+    - por supuesto
+    - exacto
+    - me sirve
+
+- intent: deny
+  examples: |
+    - no
+    - para nada
+    - no gracias
+    - nunca
+
+- intent: fuera_de_ambito
+  examples: |
+    - ¿De qué trata administración?
+    - ¿Cómo pido una pizza?
+    - ¿Quién es el presidente?

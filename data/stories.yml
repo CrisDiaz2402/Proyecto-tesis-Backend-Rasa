@@ -1,0 +1,20 @@
+version: "3.1"
+
+stories:
+- story: consulta de carrera feliz
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: preguntar_carrera
+  - action: utter_info_carrera
+  - intent: preguntar_materia
+  - action: utter_info_materia
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: consulta directa de materia
+  steps:
+  - intent: preguntar_materia
+  - action: utter_info_materia
+  - intent: affirm
+  - action: utter_goodbye

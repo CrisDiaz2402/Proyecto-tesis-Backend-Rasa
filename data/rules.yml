@@ -1,0 +1,22 @@
+version: "3.1"
+
+rules:
+- rule: Saludar siempre
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Despedirse siempre
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Responder info de carrera
+  steps:
+  - intent: preguntar_carrera
+  - action: utter_info_carrera
+
+- rule: Responder siempre fuera de ambito
+  steps:
+  - intent: fuera_de_ambito
+  - action: utter_fuera_de_ambito

@@ -1,0 +1,23 @@
+# Entornos virtuales
+venv-rasa/
+venv/
+env/
+.env
+
+# Rasa - Archivos generados
+models/
+.rasa/
+.ipynb_checkpoints/
+
+# Node/Vue - Archivos generados
+node_modules/
+dist/
+*.log
+
+# Python - Cache
+__pycache__/
+*.py[cod]
+
+# IDEs
+.vscode/
+.idea/

@@ -1,0 +1,30 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - preguntar_carrera
+  - preguntar_materia
+  - fuera_de_ambito
+
+responses:
+  utter_greet:
+  - text: "¡Hola! Soy tu asistente de la carrera. ¿En qué puedo ayudarte hoy?"
+
+  utter_info_carrera:
+  - text: "La carrera de Ingeniería de ciencias de la computacion en la EPN busca formar profesionales capaces de diseñar e implementar soluciones tecnológicas robustas."
+
+  utter_info_materia:
+  - text: "Ingeniería de ciencias de la computacion I (ICCD512) es una materia donde aprenderás el ciclo de vida del desarrollo y metodologías ágiles."
+
+  utter_goodbye:
+  - text: "Fue un gusto ayudarte. ¡Éxito en tus estudios!"
+
+  utter_fuera_de_ambito:
+  - text: "Lo siento, solo tengo información sobre la carrera de Ingeniería de ciencias de la computacion en la EPN. ¿Deseas saber algo sobre nuestro plan de estudios?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,29 +1,9 @@
 version: "3.1"
 
 stories:
-- story: recorrido simple duracion
+- story: Conversacion basica
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: preguntar_duracion
-  - action: utter_duracion
   - intent: goodbye
   - action: utter_goodbye
-
-- story: recorrido requisitos
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: preguntar_requisitos_graduacion
-  - action: utter_requisitos_graduacion
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: recorrido materias y contacto
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: preguntar_primeros_semestres
-  - action: utter_primeros_semestres
-  - intent: preguntar_contacto
-  - action: utter_contacto

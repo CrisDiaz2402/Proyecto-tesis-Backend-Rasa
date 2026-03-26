@@ -1,205 +1,96 @@
 version: "3.1"
 
 nlu:
-  - intent: greet
-    examples: |
-      - hola
-      - buenos días
-      - buenas tardes
-      - buenas noches
-      - hey
-      - qué tal
-      - holi
-      - buenas
-      - saludos
-      - que más
-      - hola bot
+- intent: greet
+  examples: |
+    - hola
+    - buenos dias
+    - buenas tardes
+    - saludos
+    - hey
+    - qué tal
+    - buen día
+    - buenas noches
+    - hola, cómo estás
 
-  - intent: goodbye
-    examples: |
-      - adiós
-      - chao
-      - hasta luego
-      - nos vemos
-      - bye
-      - hasta mañana
-      - me voy
-      - cerrar chat
-      - gracias, chao
+- intent: goodbye
+  examples: |
+    - adios
+    - hasta luego
+    - chao
+    - nos vemos
+    - me voy
+    - hasta pronto
+    - bye
 
-  # --- RAMA 1: PERFIL ---
-  - intent: preguntar_enfoque
-    examples: |
-      - ¿Cuál es el enfoque de la carrera?
-      - ¿De qué trata ciencias de la computación?
-      - ¿Qué estudian exactamente?
-      - ¿En qué consiste la carrera?
-      - ¿Cuál es el perfil de la carrera?
-      - Dame el resumen de la carrera
-      - ¿Es pura programación o qué más ven?
-      - ¿De qué va la carrera?
-      - ¿Cuál es la orientación de computación?
-
-  - intent: preguntar_campo_laboral
-    examples: |
-      - ¿En qué áreas podré trabajar?
-      - ¿Cuál es el campo laboral?
-      - ¿En qué trabaja un ingeniero en computación?
-      - ¿Hay trabajo para esta carrera?
-      - ¿Cuáles son las salidas laborales?
-      - ¿En qué empresas puedo trabajar?
-      - ¿De qué puedo trabajar al graduarme?
-      - campo ocupacional
-      - mercado laboral
-
-  - intent: preguntar_objetivos
-    examples: |
-      - ¿Qué objetivos busca la formación?
-      - ¿Para qué nos forman?
-      - ¿Cuál es el objetivo de la carrera?
-      - ¿Cuál es la misión de la carrera?
-      - ¿Qué perfil buscan formar?
-      - ¿Cuál es el fin de estudiar esto?
-      - objetivos de la carrera
-
-  # --- RAMA 2: MALLA ---
-  - intent: preguntar_duracion
-    examples: |
-      - ¿Por cuántos semestres tengo que estudiar para ser ingeniero?
-      - ¿Cuántos semestres son para ser ingeniero?
-      - ¿Cuánto tiempo se demora uno en hacerse ingeniero?
-      - ¿Cuánto dura la carrera de ingeniería?
-      - ¿Cuántos niveles tiene la ingeniería?
-      - ¿Cuántos semestres dura ciencias de la computacion?
-      - ¿Cuánto dura la carrera?
-      - ¿Cuántos semestres son?
-      - ¿Cuál es el tiempo de duración?
-      - ¿En cuánto tiempo saco el título?
-      - duración carrera
-      - semestres ingeniería
-
-  - intent: preguntar_primeros_semestres
-    examples: |
-      - ¿Qué veré en los primeros semestres?
-      - ¿Cuáles son las materias de primer nivel?
-      - ¿Qué materias dan al inicio?
-      - ¿Cuáles son las materias básicas?
-      - ¿Qué veo en primero y segundo semestre?
-      - malla de primeros niveles
-      - ¿Hay mucha matemática al principio?
-      - asignaturas de nivel 1
-
-  - intent: preguntar_materias_especialidad
-    examples: |
-      - ¿Cuáles son las materias de especialidad?
-      - ¿Qué materias importantes veo después?
-      - ¿Hay materias de redes o sistemas operativos?
-      - ¿Cuáles son las materias profesionalizantes?
-      - ¿Qué materias avanzadas hay?
-      - materias de carrera
-      - ¿Cuándo veo materias propias de computación?
-      - asignaturas de especialización
-
-  - intent: preguntar_software_ia
-    examples: |
-      - ¿Cuándo se ve Ingeniería de Software e IA?
-      - ¿En qué semestre dan inteligencia artificial?
-      - ¿Cuándo veo software 1?
-      - ¿En qué nivel está IA?
-      - ¿Cuándo aprendo desarrollo de software?
-      - ¿Hay inteligencia artificial en la malla?
-      - materia de software
-      - materia de IA
-
-  # --- RAMA 3: PROCESOS ---
-  - intent: preguntar_requisitos_ingreso
-    examples: |
-      - ¿Qué necesito para entrar?
-      - ¿Cómo ingreso a la carrera?
-      - ¿Requisitos de admisión?
-      - ¿Cuál es el puntaje para entrar?
-      - ¿Cómo entro a la Poli?
-      - proceso de admisión
-      - ¿Qué pide la Senescyt?
-      - Quiero entrar a computación
-
-  - intent: preguntar_requisitos_graduacion
-    examples: |
-      - ¿Qué requisitos hay para graduarse?
-      - ¿Qué necesito para sacar el título?
-      - ¿Cuántos créditos necesito para graduarme?
-      - ¿El inglés es requisito de grado?
-      - ¿Cómo me graduo?
-      - requisitos de titulación
-      - ¿Qué necesito para ser ingeniero?
-      - créditos para graduación
-      - ¿Es obligatorio el inglés para graduarse?
-
-  - intent: preguntar_horas_practicas
-    examples: |
-      - ¿Cuántas horas de Prácticas Preprofesionales son?
-      - ¿Cómo se dividen las horas de prácticas?
-      - ¿Cuántas horas son de servicio comunitario?
-      - ¿Cuántas horas son de prácticas laborales?
-      - ¿Tengo que hacer vinculación?
-      - desglose de horas de prácticas
-      - ¿Son 240 horas de prácticas?
-      - ¿Cuántas horas de vinculación son?
-      - prácticas y vinculación
-
-  - intent: preguntar_documentos_grado
-    examples: |
-      - ¿Qué documentos debo entregar al final?
-      - ¿Papeles para la graduación?
-      - ¿Qué necesito entregar para el grado?
-      - carpeta de grado
-      - documentos para titularse
-      - trámites de fin de carrera
-      - ¿Qué papeles pide la secretaría para graduarse?
-      - requisitos documentales
-
-  - intent: preguntar_formularios_especificos
-    examples: |
-      - ¿Qué formularios específicos se requieren?
-      - ¿Cuál es el formulario de no adeudar?
-      - ¿Qué es el formulario BRB_TIC_1?
-      - ¿Dónde consigo el formulario F_AA_211?
-      - códigos de formularios
-      - formulario de biblioteca
-      - papeleo específico
-
-  # --- RAMA 4: CONTACTO ---
-  - intent: preguntar_ubicacion
-    examples: |
-      - ¿Dónde están ubicados?
-      - ¿Dónde queda la facultad?
-      - ¿En qué edificio están?
-      - ubicación de sistemas
-      - ¿Dónde es la facultad de sistemas?
-      - dirección de la carrera
-      - ¿En qué piso están?
-      - ¿Cómo llego a la secretaría?
-
-  - intent: preguntar_contacto
-    examples: |
-      - ¿Cuál es el horario y correo?
-      - ¿A qué número llamo?
-      - Dame el mail del subdecano
-      - teléfono de la facultad
-      - correo electrónico de sistemas
-      - ¿A qué hora atienden?
-      - contacto de la carrera
-      - ¿Tienen whatsapp o teléfono?
-
-  # --- CONTROL DE ERRORES (IMPORTANTE) ---
-  - intent: fuera_de_ambito
-    examples: |
-      - ¿Cómo pido una pizza?
-      - ¿Quién ganó el partido?
-      - Quiero una beca de comida
-      - ¿Dónde queda el bar?
-      - ¿Cómo llego al estadio?
-      - cuéntame un chiste
-      - ¿Qué es medicina?
-      - receta de cocina
-      - háblame de política
+- intent: hacer_pregunta
+  examples: |
+    - ¿Cuáles son las materias del primer nivel?
+    - dime los créditos para graduarme
+    - cuántos semestres dura la carrera
+    - requisitos de graduación
+    - en qué nivel se da programación
+    - háblame de la materia de software
+    - quiero hacer una consulta sobre la malla
+    - me puedes decir las horas de practicas
+    - cuántas horas de aprendizaje autónomo
+    - qué materias me toca ver
+    - información sobre titulación
+    - cuántas horas de aprendizaje autónomo exige la carrera
+    - cuántas horas de aprendizaje práctico experimental
+    - cuántas horas de aprendizaje práctico-experimental exige la carrera en total
+    - cuántas horas de aprendizaje autónomo y cuántas de aprendizaje práctico experimental exige la carrera en total
+    - horas de aprendizaje autónomo
+    - horas de aprendizaje práctico
+    - horas totales de la carrera
+    - cuántas horas en total tiene la carrera
+    - total de horas de la carrera
+    - cuántas horas son en total
+    - horas de contacto con el docente
+    - organización del aprendizaje
+    - resumen de horas
+    - cuántas horas de prácticas laborales
+    - horas de prácticas preprofesionales
+    - cuántas horas de servicio comunitario
+    - cuántos créditos en total
+    - total de créditos para graduarme
+    - cuántas asignaturas tiene la carrera
+    - número de materias en total
+    - cuántas materias tiene la carrera
+    - materias del nivel uno
+    - materias del nivel dos
+    - materias del nivel tres
+    - materias del nivel cuatro
+    - materias del nivel cinco
+    - materias del nivel seis
+    - materias del nivel siete
+    - materias del nivel ocho
+    - materias del nivel nueve
+    - qué materias hay en el primer semestre
+    - qué materias hay en el segundo semestre
+    - qué materias hay en el tercer semestre
+    - qué materias hay en el cuarto semestre
+    - qué materias hay en el quinto semestre
+    - qué materias hay en el sexto semestre
+    - qué materias hay en el séptimo semestre
+    - qué materias hay en el octavo semestre
+    - qué materias hay en el noveno semestre
+    - prerrequisitos de inteligencia artificial
+    - prerrequisitos para tomar machine learning
+    - qué necesito para tomar seguridad informática
+    - requisitos para cloud computing
+    - cuántos créditos tiene inteligencia artificial
+    - en qué nivel está seguridad informática
+    - en qué semestre se ve computación gráfica
+    - cuándo se ve redes de computadores
+    - qué título otorga la carrera
+    - cuánto dura la carrera
+    - duración de la carrera en años
+    - requisitos adicionales para graduarse
+    - necesito inglés para graduarme
+    - qué nivel de inglés se necesita
+    - se necesita deportes para graduarse
+    - qué es el trabajo de integración curricular
+    - qué es el examen complexivo
+    - información sobre prácticas laborales
+    - cuándo se hacen las prácticas preprofesionales

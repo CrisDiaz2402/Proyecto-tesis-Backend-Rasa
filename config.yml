@@ -1,7 +1,7 @@
 recipe: default.v1
 assistant_id: 20260123-tesis-cc-epn
 
-language: es  # CAMBIO IMPORTANTE: Español
+language: es
 
 pipeline:
   - name: WhitespaceTokenizer
@@ -19,18 +19,14 @@ pipeline:
   - name: ResponseSelector
     epochs: 100
     constrain_similarities: true
-  
-  # --- GUARDIÁN DEL GRAFO ---
-  # Si la confianza es menor al 70%, el bot dirá que no sabe.
   - name: FallbackClassifier
-    threshold: 0.5
+    threshold: 0.55
     ambiguity_threshold: 0.1
 
 policies:
   - name: MemoizationPolicy
   - name: RulePolicy
-    # Configuración para manejar el "No sé"
-    core_fallback_threshold: 0.4
+    core_fallback_threshold: 0.6
     core_fallback_action_name: "action_default_fallback"
     enable_fallback_prediction: True
   - name: UnexpecTEDIntentPolicy
